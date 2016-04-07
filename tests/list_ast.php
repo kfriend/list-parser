@@ -1,0 +1,208 @@
+<?php
+
+$source = trim(file_get_contents(__DIR__.'/list.txt'));
+
+$array = array(
+    array(
+        'label' => 'Homepage',
+        'raw' => 'Homepage',
+        'index_global' => 0,
+        'index_relative' => 0,
+        'indent' => 0,
+        'children' => array(),
+    ),
+    array(
+        'label' => 'About Us',
+        'raw' => 'About Us',
+        'index_global' => 1,
+        'index_relative' => 1,
+        'indent' => 0,
+        'children' => array(
+            array(
+                'label' => 'Team',
+                'raw' => '    Team',
+                'index_global' => 2,
+                'index_relative' => 0,
+                'indent' => 1,
+                'children' => array(),
+            ),
+            array(
+                'label' => 'History',
+                'raw' => '    History',
+                'index_global' => 3,
+                'index_relative' => 1,
+                'indent' => 1,
+                'children' => array(),
+            ),
+            array(
+                'label' => 'Community',
+                'raw' => '    Community',
+                'index_global' => 4,
+                'index_relative' => 2,
+                'indent' => 1,
+                'children' => array(
+                    array(
+                        'label' => 'Giving Back',
+                        'raw' => '        Giving Back',
+                        'index_global' => 5,
+                        'index_relative' => 0,
+                        'indent' => 2,
+                        'children' => array(),
+                    ),
+                ),
+            ),
+        ),
+    ),
+    array(
+        'label' => 'Services',
+        'raw' => 'Services',
+        'index_global' => 6,
+        'index_relative' => 2,
+        'indent' => 0,
+        'children' => array(
+            array(
+                'label' => 'Web development',
+                'raw' => '    Web development',
+                'index_global' => 7,
+                'index_relative' => 0,
+                'indent' => 1,
+                'children' => array(),
+            ),
+            array(
+                'label' => 'Application development',
+                'raw' => '    Application development',
+                'index_global' => 8,
+                'index_relative' => 1,
+                'indent' => 1,
+                'children' => array(),
+            ),
+            array(
+                'label' => 'Web App Development',
+                'raw' => '    Web App Development',
+                'index_global' => 9,
+                'index_relative' => 2,
+                'indent' => 1,
+                'children' => array(),
+            ),
+            array(
+                'label' => 'Web Design',
+                'raw' => '    Web Design',
+                'index_global' => 10,
+                'index_relative' => 3,
+                'indent' => 1,
+                'children' => array(),
+            ),
+        ),
+    ),
+    array(
+        'label' => 'Products',
+        'raw' => 'Products',
+        'index_global' => 11,
+        'index_relative' => 3,
+        'indent' => 0,
+        'children' => array(
+            array(
+                'label' => 'Lulu Cam 2000',
+                'raw' => '    Lulu Cam 2000',
+                'index_global' => 12,
+                'index_relative' => 0,
+                'indent' => 1,
+                'children' => array(
+                    array(
+                        'label' => 'Testimonials',
+                        'raw' => '        Testimonials',
+                        'index_global' => 13,
+                        'index_relative' => 0,
+                        'indent' => 2,
+                        'children' => array(
+                            array(
+                                'label' => 'An arbitrary depth',
+                                'raw' => '            An arbitrary depth',
+                                'index_global' => 14,
+                                'index_relative' => 0,
+                                'indent' => 3,
+                                'children' => array(
+                                    array(
+                                        'label' => 'Item to make this',
+                                        'raw' => '                Item to make this',
+                                        'index_global' => 15,
+                                        'index_relative' => 0,
+                                        'indent' => 4,
+                                        'children' => array(
+                                            array(
+                                                'label' => 'One really long',
+                                                'raw' => '                    One really long',
+                                                'index_global' => 16,
+                                                'index_relative' => 0,
+                                                'indent' => 5,
+                                                'children' => array(),
+                                            ),
+                                            array(
+                                                'label' => 'And this one as well',
+                                                'raw' => '                    And this one as well',
+                                                'index_global' => 17,
+                                                'index_relative' => 1,
+                                                'indent' => 5,
+                                                'children' => array(),
+                                            ),
+                                            array(
+                                                'label' => 'Same with this',
+                                                'raw' => '                    Same with this',
+                                                'index_global' => 18,
+                                                'index_relative' => 2,
+                                                'indent' => 5,
+                                                'children' => array(),
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                            ),
+                            array(
+                                'label' => 'The wrench in the machine',
+                                'raw' => '            The wrench in the machine',
+                                'index_global' => 19,
+                                'index_relative' => 1,
+                                'indent' => 3,
+                                'children' => array(),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            array(
+                'label' => 'Cornhole Sets',
+                'raw' => '    Cornhole Sets',
+                'index_global' => 20,
+                'index_relative' => 1,
+                'indent' => 1,
+                'children' => array(),
+            ),
+            array(
+                'label' => 'Amazing T-shirts',
+                'raw' => '    Amazing T-shirts',
+                'index_global' => 21,
+                'index_relative' => 2,
+                'indent' => 1,
+                'children' => array(),
+            ),
+        ),
+    ),
+    array(
+        'label' => 'Blog',
+        'raw' => 'Blog',
+        'index_global' => 22,
+        'index_relative' => 4,
+        'indent' => 0,
+        'children' => array(),
+    ),
+    array(
+        'label' => 'Contact Us',
+        'raw' => 'Contact Us',
+        'index_global' => 23,
+        'index_relative' => 5,
+        'indent' => 0,
+        'children' => array(),
+    ),
+);
+
+return compact('source', 'array');

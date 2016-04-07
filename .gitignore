@@ -1,0 +1,13 @@
+# Annoying Files
+.AppleDouble
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon^M^M
+Thumbs.db
+ehthumbs.db
+
+# Always keep
+!.gitkeep

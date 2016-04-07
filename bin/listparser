@@ -1,0 +1,63 @@
+#!/usr/bin/env php
+<?php
+
+use Kfriend\ListParser\ListParser;
+
+$defaultArgs = array(
+    'format' => 'html',
+    'list' => null,
+);
+
+$args = getopt('', array(
+    'format::',
+    'list::',
+)) + $defaultArgs;
+
+$allowedFormats = array('html', 'markdown', 'array', 'json');
+
+if (!in_array($args['format'], $allowedFormats)) {
+    error_log('Unsupported format type: '.$args['format'].'. Supported types: '.implode(', ', $allowedFormats));
+    exit(1);
+}
+
+require __DIR__.'/../src/ListParser/ListParser.php';
+
+// Was input provided via arg?
+if (!empty($args['list'])) {
+    $input = $args['list'];
+}
+
+// No, check STDIN for anything
+else {
+    stream_set_blocking(STDIN, FALSE);
+    $input = trim(file_get_contents('php://stdin'));
+}
+
+if ($input === '') {
+    error_log('No input provided');
+    exit(1);
+}
+
+$parser = new ListParser($input);
+
+switch ($args['format']) {
+    case 'html':
+        $formatter = 'HtmlFormatter';
+        break;
+    case 'markdown':
+        $formatter = 'MarkdownFormatter';
+        break;
+    case 'array':
+        $formatter = 'ArrayExportFormatter';
+        break;
+    case 'json':
+        $formatter = 'JsonFormatter';
+        break;
+}
+
+require __DIR__.'/../src/ListParser/Formatter.php';
+require __DIR__."/../src/ListParser/{$formatter}.php";
+$formatter = 'Kfriend\\ListParser\\'.$formatter;
+$formatter = new $formatter($parser);
+
+echo trim($formatter->format());
